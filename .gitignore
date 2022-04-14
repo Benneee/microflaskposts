@@ -1,0 +1,10 @@
+__pycache__
+venv
+site.db
+.DS_STORE
+.flaskenv
+logs
+messages.pot
+.env
+app.db
+migrations
