@@ -9,6 +9,6 @@ body {
     color: #fff;
 }
 
-.bg-primary {
+.bg-primary, .btn-primary {
     background-color: #375a7f !important;
 }
