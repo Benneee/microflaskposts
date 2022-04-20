@@ -10,14 +10,13 @@
                         <p class="lead">What's happening?</p>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="title" placeholder="Post Title">
+                            {{ form.title(class="form-control", placeholder="Post Title") }}
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" cols="20" rows="3" id="body" placeholder="Post Full Story"></textarea>
+                            {{ form.body(class="form-control", cols="20", rows="3", placeholder="Post Full Story") }}
                         </div>
-                        
-                        <button class="btn btn-block btn-primary" type="submit">Post it!</button>
+                        {{ form.submit(class="btn btn-block btn-primary") }}
                     </div>
                 </form>
             </div>
