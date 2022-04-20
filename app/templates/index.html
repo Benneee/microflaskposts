@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row py-3">
             <div class="col-md-12">
-                <form class="card bg-dark">
+                <form class="card bg-dark" action="" method="post">
+                    {{ form.hidden_tag() }}
                     <div class="card-body">
                         <h1>Say Something</h1>
                         <p class="lead">What's happening?</p>
