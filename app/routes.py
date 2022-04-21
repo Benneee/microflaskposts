@@ -18,3 +18,12 @@ def index():
         page = request.args.get('page', 1, type=int)
         posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
     return render_template('index.html', title="MicroFlaskPosts", form=form, posts=posts.items)
+
+
+@app.route('/posts/<post_id>')
+def delete_post(post_id):
+    post = Post.query.filter_by(id=post_id).first()
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your post has been deleted!', category='success')
+    return redirect(url_for('index'))
