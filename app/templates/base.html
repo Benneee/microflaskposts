@@ -30,7 +30,7 @@
         rel="stylesheet"
     />
     {% if title %}
-        <title> {{ title }} </title>
+        <title>{{ title }}</title>
     {% else %} 
         <title>MicroFlaskPosts</title>
     {% endif %}
@@ -39,7 +39,9 @@
     <header class="bg-primary">
         <nav class="navbar py-4 container">
             <h3 class="heading text-light">
+                <a class="title-link" href="{{ url_for('index') }}"> 
                 MicroFlaskPosts
+                </a>
             </h3>
         </nav>
     </header>
