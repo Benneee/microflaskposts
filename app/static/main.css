@@ -12,3 +12,14 @@ body {
 .bg-primary, .btn-primary {
     background-color: #375a7f !important;
 }
+
+.title-link {
+    text-decoration: none;
+    color: #fff;
+    cursor: default;
+}
+
+.title-link:hover {
+    text-decoration: none;
+    color: #fff;
+}
