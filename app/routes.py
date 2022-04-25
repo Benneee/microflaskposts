@@ -22,7 +22,7 @@ def index():
 
 @app.route('/posts/<post_id>')
 def delete_post(post_id):
-    post = Post.query.filter_by(id=post_id).first()
+    post = Post.query.filter_by(id=post_id).first_or_404()
     db.session.delete(post)
     db.session.commit()
     flash('Your post has been deleted!', category='success')
