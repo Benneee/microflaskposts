@@ -7,7 +7,7 @@
         </p>
     </div>
     <div class="card-footer text-right">
-        <a href="#" class="edit card-link" data-id="${post.id}">
+        <a href="{{ url_for('update_post', post_id=post.id) }}" class="edit card-link" data-id="${post.id}">
             <i class="fa fa-pencil text-success"></i>
         </a>
         <a class="delete card-link" 
