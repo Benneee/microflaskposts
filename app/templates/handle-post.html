@@ -17,7 +17,13 @@
                         <div class="form-group">
                             {{ form.body(class="form-control", cols="20", rows="3", placeholder="Post Full Story") }}
                         </div>
-                        {{ form.submit(class="btn btn-block btn-primary") }}
+                        <button class="btn btn-block btn-primary">
+                            {% if title == 'Create Post' %}
+                                Post It!
+                            {% else %}
+                                Update Post!
+                            {% endif %}
+                        </button>
                     </div>
                 </form>
             </div>
