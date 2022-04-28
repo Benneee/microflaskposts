@@ -1,7 +1,7 @@
 from flask import flash, redirect, render_template, redirect, url_for, request
 from app import app, db
 from app.models import Post
-from app.forms import FlaskPostForm
+from app.forms import FlaskPostForm, LoginForm, RegisterForm
 
 
 
@@ -53,3 +53,10 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', category='success')
     return redirect(url_for('index'))
+
+
+
+# Auth routes
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
