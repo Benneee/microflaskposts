@@ -38,7 +38,7 @@
 <body>
     <header class="bg-primary">
         <nav class="navbar py-4 container navbar-expand-md justify-content-between">
-            <h3 class="heading text-light">
+            <h3 class="heading text-light mr-auto">
                 <a class="title-link mr-4" href="{{ url_for('index') }}"> 
                 MicroFlaskPosts
                 </a>
@@ -53,18 +53,32 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
-            <span class="navbar-toggler-icon bg-light"></span>
+            <span class="fa fa-bars text-light"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="collapse navbar-collapse w-100 order-3" id="navbarToggle">
             <!-- Navbar Right Side -->
-            <div class="navbar-nav">
+            <div class="navbar-nav ml-auto">
                 {% if current_user.is_authenticated %}
                     {% if title != 'Create Post' %}
                     <a class="nav-item nav-link title-link cursor-pointer" href="{{ url_for('create_post') }}">
-                        Say Something <i class="text-light fa fa-pencil"></i>
+                        Post It! <i class="text-light fa fa-pencil"></i>
+                    </a>
+                    {% endif %}
+                    <a class="nav-item nav-link title-link cursor-pointer" href="{{ url_for('logout') }}">Log out</a>
+
+                    {% else %}
+                    {% if title != 'Login' %}
+                    <a class="nav-item nav-link title-link cursor-pointer" href=" {{ url_for('login') }} ">
+                        Login
+                    </a>
+                    {% endif %}
+                    {% if title != 'Register' %}
+                    <a class="nav-item nav-link title-link cursor-pointer" href=" {{ url_for('register') }} ">
+                        Sign Up
                     </a>
                     {% endif %}
                 {% endif %}
+
             </div>
         </div>
         </nav>

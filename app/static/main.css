@@ -19,6 +19,17 @@ body {
     cursor: default;
 }
 
+.title-link--register {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+.title-link--register:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .title-link:hover {
     text-decoration: none;
     color: #fff;
@@ -26,4 +37,8 @@ body {
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
