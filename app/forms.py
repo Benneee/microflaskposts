@@ -5,7 +5,6 @@ from app.models import User
 
 
 class FlaskPostForm(FlaskForm):
-    title = StringField(label='Title', validators=[DataRequired()])
     body = TextAreaField(label='Body', validators=[DataRequired()])
 
 
