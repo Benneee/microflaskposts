@@ -7,15 +7,10 @@
                 <form class="card bg-dark" action="" method="post">
                     {{ form.hidden_tag() }}
                     <div class="card-body">
-                        <h1>Say Something</h1>
-                        <p class="lead">What's happening?</p>
+                        <h2>Say Something</h2>
 
                         <div class="form-group">
-                            {{ form.title(class="form-control", placeholder="Post Title") }}
-                        </div>
-
-                        <div class="form-group">
-                            {{ form.body(class="form-control", cols="20", rows="3", placeholder="Post Full Story") }}
+                            {{ form.body(class="form-control", cols="20", rows="3", placeholder="Drop the gist!") }}
                         </div>
                         <button class="btn btn-block btn-primary">
                             {% if title == 'Create Post' %}

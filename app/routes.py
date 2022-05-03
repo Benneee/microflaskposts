@@ -31,18 +31,18 @@ def create_post():
 @login_required
 def update_post(post_id):
     post = Post.query.filter_by(id=post_id).first_or_404()
-    # When we add a user system, we need to add some validations here to be sure the 
-    # active user is the post's author
+    if post.author != current_user:
+        flash(message='You are not allowed to edit this post', category='info')
+        return redirect(url_for('index'))
+    
     form = FlaskPostForm()
     if form.validate_on_submit():
-        post.title = form.title.data
         post.body = form.body.data
         db.session.commit()
         flash('Post has been updated successfully', category='success')
         return redirect(url_for('index'))
 
     elif request.method == 'GET':
-        form.title.data = post.title
         form.body.data = post.body
     
     return render_template('handle-post.html', title="Update Post", form=form, post=post)
@@ -51,8 +51,9 @@ def update_post(post_id):
 @login_required
 def delete_post(post_id):
     post = Post.query.filter_by(id=post_id).first_or_404()
-    # When we add a user system, we need to add some validations here to be sure the 
-    # active user is the post's author
+    if post.author != current_user:
+        flash(message='You are not allowed to delete this post', category='info')
+        return redirect(url_for('index'))
     db.session.delete(post)
     db.session.commit()
     flash('Your post has been deleted!', category='success')
